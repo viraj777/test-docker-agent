@@ -26,7 +26,7 @@ pipeline{
     }
     agent{
 
-       docker { image 'ubuntu:latest' }
+       docker { image 'alpine/git' }
     
     } 
     steps{
