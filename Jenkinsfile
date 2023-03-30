@@ -3,11 +3,6 @@ pipeline{
 
   stages{
     stage('build'){
-    environment{
-         
-       My_git_token = credentials('Github-access')
-
-    }
     agent{
       
       docker { image 'maven:3.8.7-eclipse-temurin-11' }
@@ -19,6 +14,27 @@ pipeline{
 
       sh "mvn clean install"
 
+    }
+   }
+    
+    stage('upload artifact to github'){
+
+    environment{
+
+       My_git_token = credentials('Github-access')
+
+    }
+    agent{
+
+       docker { image 'ubuntu:22.04' }
+    
+    } 
+    steps{
+
+      sh " cd /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.war"
+
+      sh " git clone https://github.com/viraj777/test-docker-agent.git"
+
       sh "git remote set-url origin https://${My-git-token}@github.com/viraj777/test-docker-agent.git"
 
       sh "git commit -am ."
@@ -26,7 +42,9 @@ pipeline{
       sh "git push -u origin main"
 
     }
+
    }
+
   }
 
 }
