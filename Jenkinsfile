@@ -31,6 +31,8 @@ pipeline{
     } 
     steps{
 
+      sh " sudo apt-get install git -y"
+
       sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  ./app"
 
       sh " cd ./app"
