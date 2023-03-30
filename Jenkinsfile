@@ -5,7 +5,7 @@ pipeline{
     stage('build'){
     environment{
          
-       My-git-token = credentials('Github-access')
+       My-git-token=credentials('Github-access')
 
     }
     agent{
