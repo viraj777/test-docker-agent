@@ -12,6 +12,8 @@ pipeline{
     
       git branch: 'main', url: 'https://github.com/viraj777/test-docker-agent.git'
 
+      sh "mvn clean install"
+
     }
    }
   }
