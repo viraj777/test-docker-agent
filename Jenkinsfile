@@ -5,7 +5,7 @@ pipeline{
     stage('build'){
     agent{
       
-      docker { image 'maven:latest' }
+      docker { image 'maven:3.8.7-eclipse-temurin-11' }
 
     }
     steps{
