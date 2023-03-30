@@ -31,23 +31,12 @@ pipeline{
     } 
     steps{
 
-      sh " sudo apt-get install git"
-
       sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  ./app"
 
       sh " cd ./app"
 
-      sh " git init"
+      sh " echo '${My_git_token}'"
 
-      sh " git remote add origin  https://github.com/viraj777/test-docker-agent.git"
-
-      sh " git remote set-url origin https://${My-git-token}@github.com/viraj777/test-docker-agent.git"
-
-      sh " git pull origin main"
-
-      sh "git commit -am ."
-
-      sh "git push -u origin main"
 
     }
 
