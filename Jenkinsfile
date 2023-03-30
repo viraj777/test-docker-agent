@@ -26,7 +26,7 @@ pipeline{
     }
     agent{
 
-       docker { image 'ubuntu:18.04' }
+       docker { image 'ubuntu:latest' }
     
     } 
     steps{
