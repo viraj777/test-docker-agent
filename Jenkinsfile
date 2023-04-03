@@ -33,14 +33,17 @@ pipeline{
 
       sh " git --version "
 
-      sh " git init "
+      sh " cd ./app "
 
-    /*  sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  ./app"
+      sh " git clone https://github.com/viraj777/test-docker-agent.git "
 
-      sh " cd ./app"
+      sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  . "
 
-      sh " echo '${My_git_token}'"
-    */
+      sh " git add . && git commit -m 'adding artifact to github' "
+
+      sh " git remote set-url origin https://${My_git_token}@github.com/viraj777/test-docker-agent.git "
+
+      sh " git push origin main "
 
     }
 
