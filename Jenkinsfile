@@ -52,7 +52,7 @@ pipeline{
       sh """ git config  user.email 'virajthorat776@gmail.com'
              git config  user.name 'viraj777' """
 
-      sh " git add test-docker-agent/* && git commit -m 'adding artifact to github' "
+      sh " git add test-docker-agent/*.war && git commit -m 'adding artifact to github' "
 
       sh " git remote set-url origin https://${My_git_token}@github.com/viraj777/test-docker-agent.git "
 
