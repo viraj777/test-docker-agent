@@ -44,7 +44,7 @@ pipeline{
 
 
 
-      sh " cp  /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  . "
+      sh " cp  /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/*.war  . "
 
       sh " git add . && git commit -m 'adding artifact to github' "
 
