@@ -33,6 +33,8 @@ pipeline{
 
       sh " git --version "
 
+      sh " id "
+
 
       sh """if [ ! -d 'test-docker-agent' ]
              then
