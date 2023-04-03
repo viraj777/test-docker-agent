@@ -46,6 +46,8 @@ pipeline{
 
       sh " cp  /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/*.war  . "
 
+      sh " chown -R root:root .git/ "
+
       sh """   git config --global user.email 'virajthorat776@gmail.com'
                git config --global user.name 'viraj777' """
 
