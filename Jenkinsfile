@@ -26,16 +26,20 @@ pipeline{
     }
     agent{
 
-       docker { image 'ubuntu:latest' }
+       docker { image 'virajthorat776/ubuntu-git:latest' }
     
     } 
     steps{
 
-      sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  ./app"
+      sh " git --version "
 
-      sh " cd ./app"
+      sh " git init "
 
-      sh " echo '${My_git_token}'"
+    #  sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  ./app"
+
+    #  sh " cd ./app"
+
+    #  sh " echo '${My_git_token}'"
 
 
     }
