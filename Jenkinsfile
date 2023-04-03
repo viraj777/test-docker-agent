@@ -34,11 +34,8 @@ pipeline{
       sh " git --version "
 
 
-      //sh " git clone https://github.com/viraj777/test-docker-agent.git "
+      sh " git clone https://github.com/viraj777/test-docker-agent.git "
 
-      git remote -v
-
-    /* 
       sh """   git config --global user.email "virajthorat776@gmail.com"
                git config --global user.name "viraj777 """
 
