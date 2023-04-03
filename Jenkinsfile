@@ -33,9 +33,12 @@ pipeline{
 
       sh " git --version "
 
-      sh " cd ./app "
+      sh " cd /app "
 
       sh " git clone https://github.com/viraj777/test-docker-agent.git "
+
+      sh """   git config --global user.email "virajthorat776@gmail.com"
+               git config --global user.name "viraj777 """
 
       sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  . "
 
