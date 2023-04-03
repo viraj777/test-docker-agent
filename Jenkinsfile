@@ -42,17 +42,17 @@ pipeline{
                 git clone https://github.com/viraj777/test-docker-agent.git 
              fi"""     
              
-      sh " cd test-docker-agent "
+  //    sh " cd test-docker-agent "
 
+  //    sh " pwd "
 
-
-      sh " cp  /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/*.war  . "
+      sh " cp  /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/*.war  test-docker-agent/ "
 
 
       sh """ git config  user.email 'virajthorat776@gmail.com'
              git config  user.name 'viraj777' """
 
-      sh " git add . && git commit -m 'adding artifact to github' "
+      sh " git add test-docker-agent/* && git commit -m 'adding artifact to github' "
 
       sh " git remote set-url origin https://${My_git_token}@github.com/viraj777/test-docker-agent.git "
 
