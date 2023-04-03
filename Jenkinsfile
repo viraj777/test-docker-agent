@@ -33,7 +33,7 @@ pipeline{
 
       sh " git --version "
 
-      sh " /etc/passwd | grep -i 115 "
+      sh " pwd "
 
 
       sh """if [ ! -d 'test-docker-agent' ]
