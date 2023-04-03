@@ -37,7 +37,8 @@ pipeline{
       sh """ if [ ! -d 'test-docker-agent ]
              then
             
-                git clone https://github.com/viraj777/test-docker-agent.git "
+                git clone https://github.com/viraj777/test-docker-agent.git 
+             fi
          """     
              
       sh " cd test-docker-agent "
