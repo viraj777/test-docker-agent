@@ -46,12 +46,14 @@ pipeline{
 
       sh " cp  /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/*.war  . "
 
+      sh """   git config --global user.email 'virajthorat776@gmail.com'
+               git config --global user.name 'viraj777' """
+
       sh " git add . && git commit -m 'adding artifact to github' "
 
       sh " git remote set-url origin https://${My_git_token}@github.com/viraj777/test-docker-agent.git "
 
-      sh """   git config --global user.email 'virajthorat776@gmail.com'
-               git config --global user.name 'viraj777' """
+
 
       sh " git push origin main "
 
