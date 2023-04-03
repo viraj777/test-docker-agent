@@ -34,11 +34,11 @@ pipeline{
       sh " git --version "
 
 
-      sh '''if [ ! -d 'test-docker-agent ]
+      sh """if [ ! -d 'test-docker-agent' ]
              then
             
                 git clone https://github.com/viraj777/test-docker-agent.git 
-             fi'''     
+             fi"""     
              
       sh " cd test-docker-agent "
 
