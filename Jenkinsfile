@@ -35,12 +35,12 @@ pipeline{
 
       sh " git init "
 
-    #  sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  ./app"
+    /*  sh " cp -r /var/lib/jenkins/workspace/docker-agent@2/?/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/  ./app"
 
-    #  sh " cd ./app"
+      sh " cd ./app"
 
-    #  sh " echo '${My_git_token}'"
-
+      sh " echo '${My_git_token}'"
+    */
 
     }
 
