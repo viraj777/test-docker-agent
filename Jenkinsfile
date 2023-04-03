@@ -34,7 +34,13 @@ pipeline{
       sh " git --version "
 
 
-      sh " git clone https://github.com/viraj777/test-docker-agent.git "
+      sh """ if [ ! -d 'test-docker-agent ]
+             then
+            
+                git clone https://github.com/viraj777/test-docker-agent.git "
+         """     
+             
+      sh " cd test-docker-agent "
 
       sh """   git config --global user.email "virajthorat776@gmail.com"
                git config --global user.name "viraj777 """
